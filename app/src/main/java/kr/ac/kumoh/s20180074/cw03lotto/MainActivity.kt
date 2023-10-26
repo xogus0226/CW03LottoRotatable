@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun setTxtNum(){
         for(i in txtNum.indices){
-            txtNum[i].text = model.numbers.value!![i].toString()
+            txtNum[i].text = model.numbers[i].toString()
         }
     }
 }

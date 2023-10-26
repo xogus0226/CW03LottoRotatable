@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 
 class LottoViewModel : ViewModel() {
-    private var _numbers = MutableLiveData<IntArray>(IntArray(6) { 0 })
+    private var _numbers = IntArray(6) { 0 }
     val numbers get() = _numbers // private 변수 _numbers를 외부에서 읽기 위함
 
     fun generate(){
@@ -23,6 +23,6 @@ class LottoViewModel : ViewModel() {
         newNumbers.sort()
 
         // newNumbers를 _numbers에 저장하기
-        _numbers.value = newNumbers
+        _numbers = newNumbers
     }
 }
