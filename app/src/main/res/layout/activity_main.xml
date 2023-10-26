@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="천기누설"
+        android:textSize="25pt"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/number1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/number1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/material_dynamic_primary70"
+        android:gravity="center"
+        android:text="?"
+        android:textSize="30pt"
+        app:layout_constraintBottom_toTopOf="@id/number3"
+        app:layout_constraintEnd_toStartOf="@id/number2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/number2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/material_dynamic_primary70"
+        android:gravity="center"
+        android:text="?"
+        android:textSize="30pt"
+        app:layout_constraintBottom_toTopOf="@id/number4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/number1"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <TextView
+        android:id="@+id/number3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/material_dynamic_primary70"
+        android:gravity="center"
+        android:text="?"
+        android:textSize="30pt"
+        app:layout_constraintBottom_toTopOf="@id/number5"
+        app:layout_constraintEnd_toStartOf="@id/number4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number1" />
+
+    <TextView
+        android:id="@+id/number4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/material_dynamic_primary70"
+        android:gravity="center"
+        android:text="?"
+        android:textSize="30pt"
+        app:layout_constraintBottom_toTopOf="@id/number6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/number3"
+        app:layout_constraintTop_toBottomOf="@id/number2" />
+
+    <TextView
+        android:id="@+id/number5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/material_dynamic_primary70"
+        android:gravity="center"
+        android:text='?'
+        android:textSize="30pt"
+        app:layout_constraintBottom_toTopOf="@id/creation"
+        app:layout_constraintEnd_toStartOf="@id/number6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/number3" />
+    <TextView
+        android:id="@+id/number6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/material_dynamic_primary70"
+        android:layout_margin="10dp"
+        android:textSize = "30pt"
+        android:gravity="center"
+        android:text="?"
+        app:layout_constraintTop_toBottomOf="@id/number4"
+        app:layout_constraintBottom_toTopOf="@id/creation"
+        app:layout_constraintStart_toEndOf="@id/number5"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <Button
+        android:id="@+id/creation"
+        android:text="Create randomly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/number5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
