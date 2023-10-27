@@ -2,7 +2,9 @@ package kr.ac.kumoh.s20180074.cw03lotto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kr.ac.kumoh.s20180074.cw03lotto.databinding.ActivityMainBinding
 
@@ -10,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var main: ActivityMainBinding
     private lateinit var model : LottoViewModel
     private lateinit var txtNum : Array<TextView>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,16 +26,17 @@ class MainActivity : AppCompatActivity() {
 
         setTxtNum()
 
+        model.numbers.observe(this, Observer{
+            Log.i("Observer !!!", "Detect !!")
+            setTxtNum()
+        })
+
         main.creation.setOnClickListener{
             // view model의 로또번호들 섞기
             model.generate()
-            // TextView에 view model의 로또번호를 저장하기
-            setTxtNum()
         }
     }
     fun setTxtNum(){
-        for(i in txtNum.indices){
-            txtNum[i].text = model.numbers[i].toString()
-        }
+        txtNum.forEachIndexed { index, textView ->  textView.text = model.numbers.value!![index].toString()}
     }
 }
